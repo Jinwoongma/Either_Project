@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content%}
+  {% for question in questions %}
+  <ul class='list-group list-group-flush '>
+    <li class='list-group-item'>
+      <div>
+        <!--글 제목 -->
+          <p>{{question.pk}} 번 이슈</p>
+          <h4><a href="{% url 'eithers:vote' question.pk %}">{{question.title}}</a></h4>
+        </div>
+    </li>
+  </ul>
+  {% endfor %}
+
+{% endblock %}
